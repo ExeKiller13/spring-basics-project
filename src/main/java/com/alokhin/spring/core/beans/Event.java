@@ -42,6 +42,6 @@ public class Event {
 
     @Override
     public String toString() {
-        return id + " " + msg + " " + dateFormat.format(date);
+        return id + " " + msg + " " + dateFormat.format(date) + "\n";
     }
 }

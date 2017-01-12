@@ -1,6 +1,8 @@
 package com.alokhin.spring.core.beans;
 
 public class Client {
+    private String greeting;
+
     private String id;
     private String fullName;
 
@@ -27,4 +29,10 @@ public class Client {
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
+
+    public void setGreeting(String greeting) {
+        this.greeting = greeting;
+    }
 }
+
+
