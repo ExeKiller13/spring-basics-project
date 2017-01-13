@@ -2,13 +2,19 @@ package com.alokhin.spring.core.loggers;
 
 import com.alokhin.spring.core.beans.Event;
 import org.apache.commons.io.FileUtils;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.io.File;
 import java.io.IOException;
 
+@Component
 public class FileEventLogger implements EventLogger {
 
+    @Value("${event.file:target/events_log.txt}")
     private String filename;
+
     private File file;
 
     public FileEventLogger(String filename) {
@@ -18,6 +24,7 @@ public class FileEventLogger implements EventLogger {
     public FileEventLogger() {
     }
 
+    @PostConstruct
     public void init() throws IOException {
         this.file = new File(filename);
         if (file.exists() && !file.canWrite()) {

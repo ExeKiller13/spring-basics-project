@@ -4,8 +4,8 @@
     <facet type="Spring" name="Spring">
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/src/main/resources/spring.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/loggers.xml</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/alokhin/spring/core/spring/AppConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/alokhin/spring/core/spring/LoggerConfig.java</file>
         </fileset>
       </configuration>
     </facet>

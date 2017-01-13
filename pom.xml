@@ -6,7 +6,7 @@
 
     <groupId>com.alokhin.spring</groupId>
     <artifactId>com.alokhin.spring.core</artifactId>
-    <version>0.0.8</version>
+    <version>0.0.9</version>
     <name>Spring Basics Project</name>
     <description>The project presents a Basics of Spring Framework.</description>
 

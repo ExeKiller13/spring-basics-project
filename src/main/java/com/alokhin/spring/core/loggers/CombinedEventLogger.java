@@ -1,17 +1,16 @@
 package com.alokhin.spring.core.loggers;
 
 import com.alokhin.spring.core.beans.Event;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.Collection;
 
-public class CombineEventLogger implements EventLogger {
+@Component
+public class CombinedEventLogger implements EventLogger {
 
+    @Resource(name = "combinedLoggers")
     private Collection<EventLogger> loggers;
-
-    public CombineEventLogger(Collection<EventLogger> loggers) {
-        super();
-        this.loggers = loggers;
-    }
 
     @Override
     public void logEvent(Event event) {
