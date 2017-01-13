@@ -6,7 +6,7 @@
 
     <groupId>com.alokhin.spring</groupId>
     <artifactId>com.alokhin.spring.core</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.2</version>
     <name>Spring Basics Project</name>
     <description>The project presents a Basics of Spring Framework.</description>
 
@@ -26,7 +26,9 @@
     <properties>
         <spring.version>3.2.13.RELEASE</spring.version>
         <junit.version>4.12</junit.version>
+        <mockito.version>2.2.12</mockito.version>
         <commons.io.version>2.4</commons.io.version>
+        <aspectj.version>1.8.9</aspectj.version>
     </properties>
 
     <dependencies>
@@ -62,6 +64,19 @@
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
         </dependency>
     </dependencies>
 </project>

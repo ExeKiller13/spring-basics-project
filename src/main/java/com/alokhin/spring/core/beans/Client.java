@@ -1,6 +1,7 @@
 package com.alokhin.spring.core.beans;
 
 public class Client {
+
     private String greeting;
 
     private String id;

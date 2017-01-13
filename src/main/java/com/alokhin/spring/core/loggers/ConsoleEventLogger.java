@@ -1,13 +1,20 @@
 package com.alokhin.spring.core.loggers;
 
 import com.alokhin.spring.core.beans.Event;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ConsoleEventLogger implements EventLogger {
+public class ConsoleEventLogger extends AbstractLogger {
 
     @Override
     public void logEvent(Event event) {
         System.out.println(event);
+    }
+
+    @Value("Console logger")
+    @Override
+    protected void setName(String name) {
+        this.name = name;
     }
 }

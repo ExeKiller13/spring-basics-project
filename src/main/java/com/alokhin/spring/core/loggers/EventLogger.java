@@ -5,4 +5,6 @@ import com.alokhin.spring.core.beans.Event;
 public interface EventLogger {
 
     void logEvent(Event event);
+
+    public String getName();
 }

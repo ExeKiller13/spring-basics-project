@@ -1,13 +1,14 @@
 package com.alokhin.spring.core.loggers;
 
 import com.alokhin.spring.core.beans.Event;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.util.Collection;
 
 @Component
-public class CombinedEventLogger implements EventLogger {
+public class CombinedEventLogger extends AbstractLogger {
 
     @Resource(name = "combinedLoggers")
     private Collection<EventLogger> loggers;
@@ -15,5 +16,11 @@ public class CombinedEventLogger implements EventLogger {
     @Override
     public void logEvent(Event event) {
         loggers.stream().forEach(eventLogger -> eventLogger.logEvent(event));
+    }
+
+    @Value("#{'Combined ' + combinedLoggers.![name].toString()}")
+    @Override
+    protected void setName(String name) {
+        this.name = name;
     }
 }

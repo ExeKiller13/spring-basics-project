@@ -10,7 +10,7 @@ import java.io.File;
 import java.io.IOException;
 
 @Component
-public class FileEventLogger implements EventLogger {
+public class FileEventLogger extends AbstractLogger {
 
     @Value("${event.file:target/events_log.txt}")
     private String filename;
@@ -46,5 +46,11 @@ public class FileEventLogger implements EventLogger {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Value("File logger")
+    @Override
+    protected void setName(String name) {
+        this.name = name;
     }
 }

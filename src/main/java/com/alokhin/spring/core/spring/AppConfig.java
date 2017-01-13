@@ -6,6 +6,7 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
@@ -13,6 +14,7 @@ import com.alokhin.spring.core.beans.Client;
 
 @Configuration
 @PropertySource("classpath:client.properties")
+@EnableAspectJAutoProxy
 public class AppConfig {
     @Autowired
     private Environment environment;
