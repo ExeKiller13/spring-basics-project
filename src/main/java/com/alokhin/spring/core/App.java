@@ -7,6 +7,7 @@ import com.alokhin.spring.core.loggers.EventLogger;
 import com.alokhin.spring.core.spring.AppConfig;
 import com.alokhin.spring.core.spring.LoggerConfig;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +20,7 @@ public class App {
     @Autowired
     private Client client;
 
-    @Resource(name = "defaultLogger")
+    @Value("#{T(com.alokhin.spring.core.beans.Event).isDay(8,17) ? cacheFileEventLogger : consoleEventLogger}")
     private EventLogger defaultLogger;
 
     @Resource(name = "loggerMap")
